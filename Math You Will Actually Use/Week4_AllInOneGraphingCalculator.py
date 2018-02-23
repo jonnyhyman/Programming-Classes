@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 x0 = input("What x should we start at? >> " )
 xf = input("What x should we end at? >> ")
-eq = input("Type your equation with x, and y! >> " )
+eq = input("Type your equation with x! >> " )
 
 # assuming we get something like:
 # eq = '2*x'
