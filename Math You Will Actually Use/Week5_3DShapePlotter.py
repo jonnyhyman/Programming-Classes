@@ -42,6 +42,9 @@ ax = fig.gca(projection='3d')  # tell the plot to be 3 dimensional
 X = np.arange(-1, 1, 0.25)  # from -5 to 5, at every .25 along the way
 Y = np.arange(-1, 1, 0.25)  # from -5 to 5, at every .25 along the way
 X, Y = np.meshgrid(X, Y)    # for every x, make a line of ys and vice-a-versa
+
+# Now, for every single X, Y pair, create a 3rd list, Z, which has the value
+# for Z of that X,Y pair. If (X,Y) = (2,3), then Z = (2**2 + 3**2) theres!
 Z = X**2 - Y**2
 
 # Plot the PRINGLLLLLLEEEEEEEEEEEEEEEEEEEEE
