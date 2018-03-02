@@ -39,12 +39,26 @@ fig = plt.figure()  # create a plot "figure" (window holding our PRINGLLLLLLEEEE
 ax = fig.gca(projection='3d')  # tell the plot to be 3 dimensional
 
 # Make data.
-X = np.arange(-1, 1, 0.25)  # from -5 to 5, at every .25 along the way
-Y = np.arange(-1, 1, 0.25)  # from -5 to 5, at every .25 along the way
+X = np.arange(-1, 1, 0.1)  # from -5 to 5, at every .25 along the way
+Y = np.arange(-1, 1, 0.1)  # from -5 to 5, at every .25 along the way
 X, Y = np.meshgrid(X, Y)    # for every x, make a line of ys and vice-a-versa
 
+make_circle_pringle = True  # should we delete points outside of an XY circle?
+
+if make_circle_pringle:
+
+    # Notice that the new surface when we do this is extremely jagged
+    # Super ugly actually.... Why is this?
+
+    X = np.where(X**2 + Y**2 <= 1, X, 0)
+    Y = np.where(X**2 + Y**2 <= 1, Y, 0)
+
+    # Because each time we get to one side, we teleport to the other side
+    # and accidentally "drag the pen" along the way
+
 # Now, for every single X, Y pair, create a 3rd list, Z, which has the value
-# for Z of that X,Y pair. If (X,Y) = (2,3), then Z = (2**2 + 3**2) theres!
+# for Z of that X,Y pair. If (X,Y) = (2,3), then Z = (2**2 + 3**2) there!
+
 Z = X**2 - Y**2
 
 # Plot the PRINGLLLLLLEEEEEEEEEEEEEEEEEEEEE
@@ -53,7 +67,6 @@ surf = ax.plot_surface( X, Y, Z,
                         # give it some color !
                         # https://matplotlib.org/users/colormaps.html
                         cmap=cm.coolwarm,
-
                         linewidth=0,  # how fat should the boundary lines be?
                         antialiased=False,  # make it niiiiiicee and smoooooth?
                         )
