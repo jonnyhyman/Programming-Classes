@@ -4,6 +4,13 @@
 ==============
 
 Demonstrates plotting directional arrows at points on a 3d meshgrid.
+
+YOUR MISSION, if you choose to accept it:
+
+1. Make a tornado shape
+
+2. Make a tornado shape with higher velocity at higher altitude
+
 '''
 
 from mpl_toolkits.mplot3d import axes3d
