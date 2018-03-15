@@ -6,16 +6,10 @@ from sympy import Symbol
 # -------------------------- first, solve the simple equation 2*x=2
 x = Symbol('x')  # create a "symoblic variable" x
 
-equation = x**2 + y**2 - 1  # define the equation x**2 + y**2 = 1
-
-solution = sympy.solve(equation, x)  # solve for x
-
-print(solution)  # print the list of all solutions
-
 # -------------------------- next, lets do the equation of a circle
 y = Symbol('y')
 
-equation = x**2 + y**2 - 1**2 # x**2 + y**2 = r**2 where r =1
+equation = x**2 + y**2 - 1 # x**2 + y**2 = r**2 where r =1
 
 solution = sympy.solve(equation, y)  # solve for y
 
