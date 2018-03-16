@@ -9,7 +9,7 @@ x = Symbol('x')  # create a "symoblic variable" x
 # -------------------------- next, lets do the equation of a circle
 y = Symbol('y')
 
-equation = x**2 + y**2 - 1 # x**2 + y**2 = r**2 where r =1
+equation = 2**x + x*y**2 - 1 # x**2 + y**2 = r**2 where r =1
 
 solution = sympy.solve(equation, y)  # solve for y
 
