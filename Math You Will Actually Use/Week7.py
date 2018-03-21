@@ -1,5 +1,3 @@
-' "pip install sympy" before you do any of this '
-
 import sympy  # import the calculator with variable buttons :)
 from sympy import Symbol
 
