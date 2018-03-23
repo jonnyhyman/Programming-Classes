@@ -118,6 +118,8 @@ Okay, now how do to translate our new polar coordinates into xs and ys?
 xs = np.cos(angles)  # cosine maps an angle to an X value on the unit circle
 ys = np.sin(angles)  # sine maps an angle to a Y value on the unit circle
 
+# tan = sin / cos ........ slope = y / x
+
 plt.plot(xs, ys)
 plt.show()
 
@@ -171,9 +173,9 @@ That's basically all of the really important stuff about trigonometry!
 
 If you ever want to get the ANGLE, and you know the LENGTH,
 
-use angle = arccos(length), or
-    angle = arcsin(length), or
-    angle = arctan(length),
+use angle = arccos(length) = acos(length), or
+    angle = arcsin(length) = asin(length), or
+    angle = arctan(length) = atan(length),
 
     which will all work for a certain range of lengths (not all lengths...)
 

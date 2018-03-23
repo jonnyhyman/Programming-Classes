@@ -1,5 +1,5 @@
 ''' This is a reliable*** chatbot in a dense amount of code
-
+cd
     HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!
 
         YOUR CHALLENGES...
@@ -77,6 +77,11 @@ while True: # FOREVER (until we quit)
             best_similarity = similarity
             best_prompt = prompt
 
-    # Once we're done checking the entire responses list, SPEAK!!
+    if best_similarity < 0.5:
+        say_next = 'What in the world are you talking about?  >> '
 
-    say_next = responses[best_prompt] + '  >> '  # arrows to make clean print
+    else:
+        say_next = responses[best_prompt] + '  >> '  # arrows to make clean print
+
+
+    # Once we're done checking the entire responses list, SPEAK!!
