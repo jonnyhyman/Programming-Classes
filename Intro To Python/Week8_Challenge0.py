@@ -57,6 +57,8 @@ print(similarity)  # will be 0.7 or 70 % similar
 
 '''-------------------------------- ANYWAY --------------------------------'''
 
+import random
+
 say_next = "Hi! How are you?  >> "
 
 while True: # FOREVER (until we quit)
@@ -78,7 +80,15 @@ while True: # FOREVER (until we quit)
             best_prompt = prompt
 
     if best_similarity < 0.5:
-        say_next = 'What in the world are you talking about?  >> '
+
+        options = [
+                    'What in the world are you talking about?  >> ',
+                     'What? >>',
+                     'Huh?  >>',
+                     '????? >>',
+        ]
+
+        say_next = random.choice(options)
 
     else:
         say_next = responses[best_prompt] + '  >> '  # arrows to make clean print
