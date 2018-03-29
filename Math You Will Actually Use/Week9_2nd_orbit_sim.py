@@ -1,5 +1,7 @@
 '''
 
+    A SPACESHIP ORBITAL SIMULATION - WITH REAL PHYSICS
+
     CHALLENGES (ordered by difficulty)
 
     Straightforward : mess around with the velocity. Try to get the spaceship to slingshot around earth's core
