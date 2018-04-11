@@ -22,16 +22,17 @@ import numpy as np
 # First, enable interactive plotting
 plt.ion()
 
+# get 100 evenly spaced angles between 0 and 2pi
 circle_angles = np.linspace(0, (2*np.pi), 100)
 
-
 # ----------------------------- Getting earth set up
-R0 = 6371 * 1e3  # kilometers
+R0 = 6371 * 1e3  # kilometers, radius of the earth
 
-earth_r = np.linspace(R0,         R0, 100)
-earth_X = earth_r*np.cos(circle_angles)
-earth_Y = earth_r*np.sin(circle_angles)
-earth = plt.plot(earth_X,earth_Y)[0]
+
+earth_r = np.linspace(R0,   R0,    100)  # get 100 evenly spaced R0s
+earth_X = earth_r*np.cos(circle_angles)  # X = take the cos(all_angles) * R0
+earth_Y = earth_r*np.sin(circle_angles)  # Y = take the cos(all_angles) * R0
+earth = plt.plot(earth_X,earth_Y)[0]     # make a plot with x and y
 
 # ----------------------------- Getting spaceship all set up
 
@@ -44,12 +45,20 @@ earth = plt.plot(earth_X,earth_Y)[0]
 alt_initial = 408_773  # ISS altitude, meters
 
 # let's start y = initial altitude + radius of earth
-pos_initial = np.array([0., alt_initial + R0])
-vel_initial = np.array([7666.736, 0.]) # ISS horizontal velocity, meters
+pos_initial = np.array([
+                            0.,
+                            alt_initial + R0
+                        ])
 
-trail_points    = 500
+vel_initial = np.array([
+                            7666.736,
+                            0.
+                        ]) # ISS horizontal velocity, meters
+
+
+trail_points    = 500  # how many points should the trail keep?
 spaceship_trail = { 'x': [pos_initial[0]], 'y': [pos_initial[1]] }
-spaceship = plt.plot(*pos_initial)[0]
+spaceship = plt.plot(*pos_initial)[0]  # give plot the position intially
 
 # ----------------------------- Getting physics set up
 
