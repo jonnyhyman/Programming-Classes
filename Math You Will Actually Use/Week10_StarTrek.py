@@ -2,7 +2,7 @@ import numpy as np  # the first thing any starfleet officer does...!
 '''
 Part 1: Romulans.........................!
 '''
-x = 1000  # km
+x = 1001  # km
 y = 500   # km
 
 # since we can may treat the x and y as sides of a triangle,
@@ -13,7 +13,7 @@ y = 500   # km
 # although, the ship probably isn't behind us so ignore the negative sqrt...
 
 range = np.sqrt( np.power(x,2) + np.power(y,2) )  # power == ** ... KAPOW!
-mark  = np.asin(y / x)  # reverse sin (y/x)
+mark  = np.arctan(y / x)  # reverse sin (y/x)
 mark  = np.rad2deg(mark)
 
 print('Captain, the Romulan ship is', range,'kilometers, mark',mark,' and closing...')
