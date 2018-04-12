@@ -13,8 +13,11 @@ y = 500   # km
 # although, the ship probably isn't behind us so ignore the negative sqrt...
 
 range = np.sqrt( np.power(x,2) + np.power(y,2) )  # power == ** ... KAPOW!
+mark  = np.asin(y / x)  # reverse sin (y/x)
+mark  = np.rad2deg(mark)
 
-print('Captain, the Romulan ship is', range,'kilometers and closing...')
+print('Captain, the Romulan ship is', range,'kilometers, mark',mark,' and closing...')
+
 
 input('ENTER to continue')
 
