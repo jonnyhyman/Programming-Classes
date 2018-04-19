@@ -11,8 +11,6 @@ How do you write a function?
 
     Look below!
 
-
-
 CHALLENGES: (in order of HEAT = difficulty)
 
     Siberian Winter:  Change the link of the Philly function
@@ -22,8 +20,6 @@ CHALLENGES: (in order of HEAT = difficulty)
     Spring in California:  Convert Antonia's inputs to named inputs
 
     Summer in California:  Write a new function which adds two numbers
-
-    Death Valley:  Convert the chatbot into a bunch of function calls
 
     Rocket Engine:  Convert these functions into a CLASS
 
@@ -45,14 +41,8 @@ def Philly():
 
     print('You can even do fun stuff in here... Check this out...')
 
-    land_of_make_believe = True
-
     import webbrowser
-    if land_of_make_believe:
-        webbrowser.open('https://media.giphy.com/media/R8n7YlPHe34dy/giphy.gif')
-
-    else:
-        webbrowser.open('https://media.giphy.com/media/6tHy8UAbv3zgs/giphy.gif')
+    webbrowser.open('https://media.giphy.com/media/R8n7YlPHe34dy/giphy.gif')
 
 def Antonia(argument1, argument2, TheyDontAllNeedToSayArgumentThough):
     print('Hello from Antonia, the fun function with fun inputs')

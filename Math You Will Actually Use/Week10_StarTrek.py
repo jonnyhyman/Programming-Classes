@@ -2,7 +2,7 @@ import numpy as np  # the first thing any starfleet officer does...!
 '''
 Part 1: Romulans.........................!
 '''
-x = 1001  # km
+x = 1000  # km
 y = 500   # km
 
 # since we can may treat the x and y as sides of a triangle,

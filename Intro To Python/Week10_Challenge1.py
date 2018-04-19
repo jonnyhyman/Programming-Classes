@@ -17,6 +17,7 @@
             ROCKET   : Add a program icon, change the font of the buttons text,
                         & make window non-resizable by the user
 
+    !!!!!!!!!!!!!!! THIS WILL NOT WORK ON CHROMEBOOKS !!!!!!!!!!!!!!!!!!!!!!
 '''
 
 
@@ -37,7 +38,6 @@ def Success():
 
 def Motivate():
     open_link('https://media.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif')
-
 
 def Boom():
     open_link('https://media.giphy.com/media/xTiTnhFwjZHC8Ynrzi/giphy.gif')
