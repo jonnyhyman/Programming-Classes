@@ -23,6 +23,8 @@ Welcome to Cowcooloose,
     )_ \__;      ";"          :_ ;  \_\       `,','
     :__\  \    * `,'*         \  \  :  \   *  8`;'*  *
         `^'     \ :/           `^'  `-^-'   \v/ :  \/   -Bill Ames-
+
+
 '''
 )
 
@@ -57,7 +59,7 @@ pause_continue()
 
 
 print('''
-        Now, what if as the cow walked, he accelerated (she's in a rush you see).
+        Now, what if as the cow walked, she accelerated (she's in a rush you see).
         If she sped up 1.2 mi per hour per hour, how fast is she going in 2 hrs?
 ''')
 
@@ -92,7 +94,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 time = sympy.symbols('time')
-speed = 2 * sympy.sin(time / 2) + 2
+speed = 2 * sympy.sin(time * 200) + 2
 
 
 # lamdify() is a great function.
@@ -102,7 +104,7 @@ speed_numpy = sympy.lambdify( time,  # speed(time)
                               modules=['numpy']  # use numpy's functions to make it real
                     )
 
-time_walking = 60 # spend 60 minutes walking
+time_walking = 1.0 # spend 1 hour minutes walking
 times = np.linspace(0, time_walking, 100) # make 100 points between 0 and 60
 speeds = speed_numpy(times) # make 100 speeds at each time in times
 
@@ -164,4 +166,4 @@ print('The cow walks a grand total of', distance_walked, 'miles in',
                                         time_walking, 'minutes')
 
 print("That's a fast cow!")
-print("It's distance function is:", sympy.integrate(speed, time))
+print("Its distance function is:", sympy.integrate(speed, time))
