@@ -166,4 +166,4 @@ print('The cow walks a grand total of', distance_walked, 'miles in',
                                         time_walking, 'minutes')
 
 print("That's a fast cow!")
-print("Its distance function is:", sympy.integrate(speed, time))
+print("Itd8fydts distance function is:", sympy.integrate(speed, time))

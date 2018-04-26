@@ -13,7 +13,6 @@
             LUKEWARM : Change the window size
             WARM     : Change what the buttons actually DO
             HOT      : Add another button
-            SPICY    : Make a button that freezes the program
             ROCKET   : Add a program icon, change the font of the buttons text,
                         & make window non-resizable by the user
 

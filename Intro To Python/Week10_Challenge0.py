@@ -25,6 +25,8 @@ CHALLENGES: (in order of HEAT = difficulty)
 
 '''
 
+import webbrowser
+
 def Franko():
     print('Hello from Franko, the simple function')
 
@@ -40,9 +42,7 @@ def Philly():
     print('Which is exactly... ', sqrt1245_pi)
 
     print('You can even do fun stuff in here... Check this out...')
-
-    import webbrowser
-    webbrowser.open('https://media.giphy.com/media/R8n7YlPHe34dy/giphy.gif')
+    webbrowser.open('http://www.jonnyhyman.com')
 
 def Antonia(argument1, argument2, TheyDontAllNeedToSayArgumentThough):
     print('Hello from Antonia, the fun function with fun inputs')
@@ -51,27 +51,16 @@ def Antonia(argument1, argument2, TheyDontAllNeedToSayArgumentThough):
     print(argument2)
     print(TheyDontAllNeedToSayArgumentThough)
 
+    webbrowser.open('https://media.giphy.com/media/R8n7YlPHe34dy/giphy.gif')
 
 def Kevin(named_argument = 'Wut', other_one = 'Hah', herp = 'derp' ):
     print('Hello from Kevin the function with NAMED inputs...')
     print('My inputs were...', named_argument, other_one, herp)
 
 
-input(" ----> Notice how none of the functions run until you call them"
-        "  //// [ENTER] to continue")
+#input(" ----> Notice how none of the functions run until you call them"
+#        "  //// [ENTER] to continue")
 
 print('_______________')  # some space to be able to read easier
 
-Franko()
-
-print('_______________')  # some space to be able to read easier
-
-Philly()
-
-print('_______________')  # some space to be able to read easier
-
-Antonia('FunThing1', 'FunThing2', 'SoMuchFunWow')  # ALWAYS must give ALL arguments
-
-print('_______________')  # some space to be able to read easier
-
-Kevin(herp='herpadiderpadi!')  # ALWASS no need to give ALL keyword arguments
+Antonia()
