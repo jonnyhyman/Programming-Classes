@@ -19,6 +19,12 @@ class Fruit:
 
         if soft:
             self.hard = False
+        else:
+            self.hard = True
+
+    def eat(self):
+        if self.hard:
+            print('You are eating a hard apple')
 
 
 

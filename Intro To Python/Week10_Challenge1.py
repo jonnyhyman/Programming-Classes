@@ -38,25 +38,14 @@ def Success():
 def Motivate():
     open_link('https://media.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif')
 
+def oof():
+    open_link('https://giphy.com/gifs/jacksepticeye-a7JJdR8AYOOcw')
+
 def Boom():
     open_link('https://media.giphy.com/media/xTiTnhFwjZHC8Ynrzi/giphy.gif')
 
-"""!!!!!!!!!!!!!!!!!  BEWARE!
 
-                    You're about to see the word [self.] EVERYWHERE
-                    Don't panic
 
-                    [self.] just means something is owned by something else
-
-                    for instance, our GiphyButtons class!
-
-                    If you have something like self.centralWidget,
-                    that just means:
-
-                            "get the variable called centralWidget, which
-                            just so happens to be created by GiphyButtons"
-
-!!!!!!!!!!!!!!!!!!!!"""
 
 # the "class" GiphyButtons inherits from QMainWindow, which MAKES the window
 class GiphyButtons(QtWidgets.QMainWindow):
@@ -110,6 +99,14 @@ class GiphyButtons(QtWidgets.QMainWindow):
 
         right_edge_of_last_button = self.boom_button.geometry().right()
 
+        self.oof_button = QtWidgets.QPushButton("OOF",
+                                        parent=self.centralWidget)
+
+        self.oof_button.move(right_edge_of_last_button, 0)
+
+        right_edge_of_last_button = self.oof_button.geometry().right()
+
+
 
     def connect_buttons(self):
         ''' Connect gui buttons to do something '''
@@ -122,6 +119,8 @@ class GiphyButtons(QtWidgets.QMainWindow):
 
         # Success function is defined before class
         self.boom_button.clicked.connect(Boom)
+
+        self.oof_button.clicked.connect(oof)
 
 
 if __name__=='__main__':
