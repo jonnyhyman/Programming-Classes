@@ -57,6 +57,7 @@ ___ = plt.plot(1000, -100)  # set the screen limits
 
 car = plt.plot(np.array([0,0]))[0]  # create the car!
 
+
 wall = plt.plot([500,500],[+100,-25])[0]  # create the wall!
 
 accel_vect = plt.plot([0,0])[0]
