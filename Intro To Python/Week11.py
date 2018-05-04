@@ -1,7 +1,11 @@
-
 '''
+    PyGame: CHALLENGES
 
-    PyGame
+    1. Make the game run really fast
+    2. Change the screen size
+    3. Change the background color
+    4. Make the WASD keys move the snake, instead of arrow keys
+    5. Change the shape of the apple objects
 
 '''
 
