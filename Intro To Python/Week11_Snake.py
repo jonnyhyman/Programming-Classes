@@ -61,6 +61,10 @@ def draw_box(surf, color, pos):
     r = pygame.Rect((pos[0], pos[1]), (GRIDSIZE, GRIDSIZE))
     pygame.draw.rect(surf, color, r)
 
+def draw_circle(surf, color, pos):
+    r = pygame.Rect((pos[0], pos[1]), (GRIDSIZE, GRIDSIZE))
+    pygame.draw.ellipse(surf, color, (pos[0],pos[1]), GRIDSIZE)
+
 class Snake(object):
     def __init__(self):
         self.lose()
@@ -105,7 +109,7 @@ class Apple(object):
         self.position = (random.randint(0, GRID_WIDTH-1) * GRIDSIZE, random.randint(0, GRID_HEIGHT-1) * GRIDSIZE)
 
     def draw(self, surf):
-        draw_box(surf, self.color, self.position)
+        draw_circle(surf, self.color, self.position)
 
 def check_eat(snake, apple):
     if snake.get_head_position() == apple.position:
