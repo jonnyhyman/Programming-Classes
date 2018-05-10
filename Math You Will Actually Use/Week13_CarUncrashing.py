@@ -17,7 +17,7 @@
 def control(actual_position, actual_velocity, dt):
     """ ALL OF YOUR CONTROL MAGICKS GO HERE """
 
-    wheel_command    = 1  # +1 == turn left, full deflection
+    wheel_command    = 0  # +1 == turn left, full deflection
     throttle_command = 1  # +1 == speed up
 
     return {'steer':wheel_command, 'throttle':throttle_command}
