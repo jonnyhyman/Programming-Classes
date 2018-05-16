@@ -30,7 +30,7 @@
     Challenge 4.1 : Use the "socket" module to send a message from one python
                     window to another, on your computer screen
 
-                    Big hint: USE "UDP COMMUNICATION"
+                    Big hint: USE "UDP COMMUNICATION" AND GOOGLE
 
     Challenge 4.2 :
             (Teams) : Use the "socket" module to send a message to
