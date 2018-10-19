@@ -13,12 +13,28 @@
         a speed of 100 mph!
 
 """
+wheel_lp = 0
+throttle_lp = 0
 
 def control(actual_position, actual_velocity, dt):
     """ ALL OF YOUR CONTROL MAGICKS GO HERE """
+    global wheel_lp, throttle_lp
 
-    wheel_command    = 0  # +1 == turn left, full deflection
-    throttle_command = 1  # +1 == speed up
+    y_desired = -50
+
+    wheel_p = actual_position[1] - y_desired  # proportional / error
+    wheel_d = (wheel_p - wheel_lp) / dt   # derivative
+    wheel_lp = wheel_p
+
+    wheel_command    = 10.5*wheel_p + 100.0*wheel_d # +1 == turn right, full deflection
+
+    speed_desired = 100
+    throttle_p = -actual_velocity[0] + speed_desired  # proportional / error
+    throttle_d = (throttle_p - throttle_lp) / dt   # derivative
+    throttle_lp = throttle_p
+
+    throttle_command    = 1.8*throttle_p + 0.1*throttle_d  # +1 == speed up
+
 
     return {'steer':wheel_command, 'throttle':throttle_command}
 
@@ -130,11 +146,11 @@ while True:
     car.set_xdata(car_trail['x'])  # get all the saved x data
     car.set_ydata(car_trail['y'])  # get all the saved y data
 
-    print('Trail N : ', len(car_trail['x']), end =' | ')
-    print('Distance: ', round(norm(pos),2), end =' | ')
+    #print('Trail N : ', len(car_trail['x']), end =' | ')
+    #print('Distance: ', round(norm(pos),2), end =' | ')
     print('Velocity: ', round(norm(vel),2), end =' | ')
-    print('Steering: ', round(ctrl['steer'],2), end =' | ')
-    print('Throttle: ', round(ctrl['throttle'],2))
+    #print('Steering: ', round(ctrl['steer'],2), end =' | ')
+    #print('Throttle: ', round(ctrl['throttle'],2))
 
     if len(car_trail['x']) > trail_points:
         car_trail['x'].pop(0)

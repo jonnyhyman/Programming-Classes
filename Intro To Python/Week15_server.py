@@ -23,5 +23,6 @@ print("message:", MESSAGE)
 # Open an internet socket utilizing SOCK_DGRAM which means UDP
 
 while True:
+    MESSAGE = input()
     with socket.socket(socket.AF_INET,  socket.SOCK_DGRAM) as conn:
         conn.sendto(bytes(MESSAGE,'utf-8'), (UDP_IP, UDP_PORT))

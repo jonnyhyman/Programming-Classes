@@ -32,7 +32,7 @@
         Which one works better for this kind of pattern?
         What about another pattern?
 
-    Challenge 7 : Carolina Reaper
+    Challenge 7 : Ghost Pepper / Carolina Reaper
         Add another layer to the network (would be l2) by following the pattern
         of how l1 is connected to l0
 
@@ -40,22 +40,25 @@
 import numpy as np
 
 # input dataset
-X = np.array([  [0,0,1],
-                [0,1,1],
-                [1,0,1],
-                [1,1,1] ])
+X = np.array([
+                [ord(character) for character in 'JON'],
+                [ord(character) for character in 'BOB'],
+                [ord(character) for character in 'JOE'],
+                [ord(character) for character in 'JAK'],
+                [ord(character) for character in 'ACK'],
+                [ord(character) for character in 'JEF'],
+                [ord(character) for character in 'DOM'],
+            ])
 
 # output dataset
-y = np.array([[0,0,1,1]]).T
+y = np.array([[1,0,1,1,0,1,0]]).T
 
 # sigmoid "squishification" function
 def nonlin(x, deriv=False):
-
     if (deriv == True):
-        return x*(1-x)
+        return (1/2)*(1 - np.tanh(x) ** 2)
     else:
-        return 1/(1+np.exp(-x))
-
+        return (np.tanh(x) + 1)/2
 
 # seed random numbers to make calculation
 # deterministic (just a good practice)
@@ -65,10 +68,11 @@ np.random.seed(1)
 syn0 = 2*np.random.random((X.shape[1],1)) - 1
 
 # training
-for iter in range(10000):
+for iter in range(100_000_000):
 
     # forward propagation
     l0 = X
+
     l1 = nonlin(np.dot(l0,syn0))
 
     # how much did we miss?
@@ -84,13 +88,22 @@ for iter in range(10000):
 print("Output After Training:")
 print(l1)
 
-print("Test After Training")
 # test dataset
-T = np.array([  [0,0,0],
-                [1,0,0],
-                [1,0,1],
-                [1,1,1],
-                [0,0,1] ])
+T = np.array([  [ord(character) for character in 'JAQ'],
+                [ord(character) for character in 'CAJ'],
+                [ord(character) for character in 'SUZ'],
+                [ord(character) for character in 'OLV'],
+                [ord(character) for character in 'KRS'],
+                [ord(character) for character in 'JON'],
+                [ord(character) for character in 'CAM'],
+            ])
+
+print("Test Set")
+print(T)
+
 l0 = T
 l1 = nonlin(np.dot(l0,syn0))
-print(l1)
+print("Test After Training")
+
+for val in l1:
+    print(val)

@@ -5,13 +5,13 @@
     4. Make it so that you can use the input() function to send a message
     5. Make it so that this server can also receive, meaning your friend
         can send a message TO YOU
-        
+
 """
 
 import socket
 from time import sleep
 
-UDP_IP = "127.0.0.1" # IP address to listen on
+UDP_IP =  "192.168.1.180" # IP address to listen on
 UDP_PORT = 5005  # Port to listen on
 
 sock = socket.socket(socket.AF_INET, # Internet
