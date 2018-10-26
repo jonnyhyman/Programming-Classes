@@ -3,7 +3,7 @@
     ...IF YOU ACCEPT THEM:
 
     (in order of SPICYNESS)
-
+·
     1. TABASCO: Change the points to be different
     2. SRIRACHA: Add more points - see if it can always fit all of them
     3. HABANERO: Change the fit to a different fit algorithm
@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 points = np.array([(1, 1), (2, 4), (3, 1), (9, 3)])
 
 # Get the x and y lists ('vectors'):
-# x = [1,2,3,9]
+# x = [1,2,3,9]··
 # y = [1,4,1,3]
 
 x = points[:,0]
